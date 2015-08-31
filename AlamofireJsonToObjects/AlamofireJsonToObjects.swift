@@ -99,7 +99,7 @@ extension Request {
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
                 dispatch_async(queue ?? dispatch_get_main_queue()) {
                     if data.isSuccess {
-                        let parsedObject:[T]? = EVReflection.arrayFromJson(T(), json: data.value)
+                        let parsedObject:[T]? = T.arrayFromJson(data.value)
                         completionHandler(self.request, self.response, Result.Success(parsedObject!))
                     } else {
                         completionHandler(self.request, self.response, Result<[T]>.Failure(data.data, data.error ?? NSError(domain: "NaN", code: 1, userInfo: nil)))
