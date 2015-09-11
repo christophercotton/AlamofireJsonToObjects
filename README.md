@@ -35,11 +35,10 @@ use_frameworks!
 pod "AlamofireJsonToObjects"
 ```
 
-If you are using Swift 2.0 (tested with beta 2) then instead put the folowing lines in your Podfile:
-
+I have now moved on to Swift 2. If you want to use AlamofireJsonToObjects, then get that version by using the podfile command:
 ```
 use_frameworks!
-pod 'AlamofireJsonToObjects', :git => 'https://github.com/evermeer/AlamofireJsonToObjects.git', :branch => 'Swift2'
+pod "AlamofireJsonToObjects", '~> 1.0'
 ```
 
 Version 0.36 of cocoapods will make a dynamic framework of all the pods that you use. Because of that it's only supported in iOS 8.0 or later. When using a framework, you also have to add an import at the top of your swift file like this:
